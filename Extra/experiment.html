@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!--Bootstrap Link-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<!--Style link-->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!--preloader-->
+<div id="preloader"></div>
+
+
+<style type="text/css">
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* Adjust the background color */
+  z-index: 9999;
+}
+
+#content {
+  display: none; /* Initially hide the content */
+}
+
+@keyframes preloader-animation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#preloader:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px; /* Adjust the size of the loader */
+  height: 50px; /* Adjust the size of the loader */
+  border: 3px solid #ccc; /* Adjust the border color */
+  border-top-color: #000; /* Adjust the color of the moving part */
+  border-radius: 50%;
+  animation: preloader-animation 1s infinite linear;
+  animation-delay: 0.5s; /* Delay the animation for 0.5 seconds */
+}
+
+#preloader.fade-out {
+  animation: fade-out 1s forwards;
+  animation-delay: 3s; /* Delay the fade-out animation for 3 seconds */
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+#content.fade-in {
+  animation: fade-in 1s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+</style>
+<script type="text/javascript">
+  window.addEventListener('load', function() {
+  const preloader = document.getElementById('preloader');
+  const content = document.getElementById('content');
+
+  setTimeout(function() {
+    preloader.classList.add('fade-out');
+    content.classList.add('fade-in');
+  }, 3000); // Delay the fade-out and fade-in for 3 seconds
+});
+
+</script>
+
+<!--preloader-->
+
+<div id="content">
+  <h1> Hello </h1>
+    <div class="rr">
+  <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
+</div>
+
+<div class="image-zoom">
+  <img src="https://themewagon.github.io/news/assets/img/gallery/whats_news_details1.png" class="img-fluid">
+</div>
+
+
+<div class="custom-border"></div>
+
+<style type="text/css">
+  .custom-border {
+  width: 200px; /* Adjust the width according to your needs */
+  height: 100px; /* Adjust the height according to your needs */
+  border: 1px solid black; /* Default border style */
+  margin: 20px; /* Adjust the margin according to your needs */
+  position: relative; /* Required for pseudo-elements */
+}
+
+.custom-border::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Adjust the negative value to control the length of the border */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Adjust the width according to your needs */
+  height: 1px; /* Adjust the height according to your needs */
+  background-color: black; /* Adjust the color according to your preference */
+}
+
+</style>
+
+
+
+<style type="text/css">
+  @keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rr {
+  animation: fade-in-up 1s ease-out;
+}
+
+.image-zoom {
+  overflow: hidden;
+}
+
+.image-zoom img {
+  transition: transform 0.3s ease;
+}
+
+.image-zoom img:hover {
+  transform: scale(1.2);
+}
+
+
+</style>
+  </div>
+
+<!--Header start-->
+
+
+
+<!--Header end-->
+<!--Javascript link-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
